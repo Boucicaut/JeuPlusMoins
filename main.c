@@ -55,13 +55,13 @@ int rejoue() {
 
 int main( int argc, char** argv ) {
 
-int nombre = 0;     // nombre aléatoire à trouver
+int nombre = 0;     // nombre alÃ©atoire Ã  trouver
 int guess = 0;      // guess du joueur
 int nbEssais = 0;   // nombre d'essais
 int a =0, b=0;      // bornes
 
 printf("Bonjour\n");
-srand(time(NULL)); // initialisation de la donnée seed en fonction de time (seconde au 1/1/70)
+srand(time(NULL)); // initialisation de la donnÃ©e seed en fonction de time (seconde au 1/1/70)
 
 do {                // Do et While pour REJOUER
     nbEssais = 0;
@@ -70,35 +70,38 @@ if (mode() == 1)
         switch (difficulte()) {
             printf("rand()");
             case 1:
-                nombre = rand() % (100+1);    // Formule si borne inférieure a = 0
+                nombre = rand() % (100+1);    // Formule si borne infÃ©rieure a = 0
                 break;
             case 2:
-                nombre = rand() % (1000+1);    // Formule si borne inférieure a = 0
+                nombre = rand() % (1000+1);    // Formule si borne infÃ©rieure a = 0
                 break;
             case 3:
-                nombre = rand() % (10000+1);    // Formule si borne inférieure a = 0
+                nombre = rand() % (10000+1);    // Formule si borne infÃ©rieure a = 0
                 break;
 }
     } else {
-        printf("Le second joueur doit choisir les bornes");
+       /* printf("Le second joueur doit choisir les bornes");
 
         printf("\n\nBorne inferieure ?\n");
         scanf("%d",&a);
         printf("Ok merci\n\nBorne superieure ?\n");
         scanf("%d",&b);
         printf("Ok merci\n\n");                   //PERMET DE DEMANDER LES BORNES INF ET MAX AU JOUEUR
-
-    if (a == 0) {
-    nombre = rand() % (b+1);    // Formule si borne inférieure a =0
+*/ //SI LE DEUXIEME JOUEUR ENTRE LES BORNES
+    printf("Joueur 2 : Entrez le nombre Ã  deviner");
+    scanf("%d", &nombre);
+    printf("\n\n\n\n\n\n\n");
+    /* if (a == 0) {
+    nombre = rand() % (b+1);    // Formule si borne infÃ©rieure a =0
     } else {
-    nombre = rand() % (b-a+1)+a; // initialisation du nombre à deviner si borne inférieure > 0 (si initialisation par 2nd joueur
-}
+    nombre = rand() % (b-a+1)+a; // initialisation du nombre Ã  deviner si borne infÃ©rieure > 0 (si initialisation par 2nd joueur
+} */ // SI LE DEUXIEME JOUEUR ENTRE LES BORNES
     }
 
 
 
-printf("\n\n[TRICHE] Le nombre a deviner est : %d\n\n", nombre);       // afficher le nombre à deviner
-
+// printf("\n\n[TRICHE] Le nombre a deviner est : %d\n\n", nombre);       // afficher le nombre Ã  deviner
+// TRICHE POUR AFFICHER LE NOMBRE
 
 // On devine le nombre
 do  {
